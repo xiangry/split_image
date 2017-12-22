@@ -67,17 +67,15 @@ def check_valid_space(size, space):
     :param space: 
     :return: 是否可以，是否旋转
     """
-
-    if size[0] < space[0] and size[1] < space[1]:
+    if size[0] <= space[0] and size[1] <= space[1]:
         return True, 1
-    else if size[0] < space[1] and size[1] < space[0]:
+    elif size[0] <= space[1] and size[1] <= space[0]:
         return True, -1
     else:
         return False
 
 
 def splitspr(input, out, last, free):
-
     # 检查是否有能盛放的空间
     for space in free:
         flag, rolate = check_valid_space(last, space)
